@@ -18,13 +18,15 @@ const getDataFromServer = (status, callback) => {
 const processData = (data, err) => {
   try{
     if(err){
-      console.log("Error: " + err.message);
-      return
+      const error = new Error("error")
+      throw error
     }
     console.log('Data: ' + data);
   }catch(error){
-      console.log("unexpected error: " + error.message);
+      if(error.message === "error"){
+        console.log("Error: " + err.message);
+      }
   }
 }
 
-getDataFromServer(true, processData)
+getDataFromServer(false, processData)
