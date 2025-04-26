@@ -1,7 +1,7 @@
 const url = "https://jsonplaceholder.typicode.com/users"
 
 fetch(url).then((res) => {
-   return res.json()
+  return res.json()
 }).then((data) => {
   const arr = data.map((item) => (
     {
